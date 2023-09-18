@@ -1,4 +1,5 @@
-def TypeOfInput():
+
+def type_of_input():
     """
     Asks the user if they want to input the dates in a file, in the console or 
     if they want to quit.
@@ -6,6 +7,8 @@ def TypeOfInput():
     Returns
     -------
     The type of user input.
+    
+    
 
     """
     
@@ -19,6 +22,8 @@ def TypeOfInput():
             raise ValueError
     except:
         print("Your input is invalid. Please type one of the designated inputs.")
-        TypeOfInput()
+        type_of_input()
+
+        
 
         
