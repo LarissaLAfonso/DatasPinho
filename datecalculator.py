@@ -1,12 +1,20 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 18 07:45:51 2023
-
-@author: b51055
-"""
 import datetime as dt
 
 def verify_leap_year(year):
+    """
+    Verify if the inputed year is a leap year.
+
+    Parameters
+    ----------
+    year : int
+        Input year.
+
+    Returns
+    -------
+    bool
+        TRUE if leap year, FALSE if not.
+
+    """
     if year % 400 == 0:
         return True
     elif year % 100 == 0:
@@ -15,8 +23,29 @@ def verify_leap_year(year):
         return True
     else:
         return False
+    
 
 def parse_date_string(input_string):
+    """
+    Takes the inputed string and transforms it in a datetime.datetime object.
+
+    Parameters
+    ----------
+    input_string : string
+        Inputed date.
+
+    Raises
+    ------
+    ValueError
+        If the inputed number of days in a month is greater than the number of
+        days that month has.
+
+    Returns
+    -------
+    datetime.datetime
+        The inputed day, in datetime form.
+
+    """
     months = {"Janeiro": (1, 31),
              "Fevereiro": (2, 28),
              "Março": (3, 31),
