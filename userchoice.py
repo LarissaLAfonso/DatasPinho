@@ -8,8 +8,6 @@ def type_of_input():
     -------
     The type of user input.
     
-    
-
     """
     
     user_choice = input("What is the chosen type of input?\nIf file, type 'F',\n if console input type 'C',\n if you want to quite type 'Q'.")
