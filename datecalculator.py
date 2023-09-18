@@ -73,3 +73,21 @@ def parse_date_string(input_string):
 
     return dt.datetime(year, month_number, day)
 
+def calculate_days_between_dates(date_1, date_2):
+    """
+    Calculate the difference in days between two dates.
+
+    Parameters
+    ----------
+    date_1 : datetime.datetime
+        First date (the older)
+    date_2 : datetime.datetime
+        Second date (the recent one)
+
+    Returns
+    -------
+    int
+        The number of days between the two dates.
+    """
+    timedelta = date_2 - date_1
+    return timedelta.days
