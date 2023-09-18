@@ -95,9 +95,9 @@ def calculate_days_between_dates(date_1, date_2):
     Parameters
     ----------
     date_1 : datetime.datetime
-        First date (the older)
+        First date
     date_2 : datetime.datetime
-        Second date (the recent one)
+        Second date
 
     Returns
     -------
@@ -110,7 +110,7 @@ def calculate_days_between_dates(date_1, date_2):
 
     """
     timedelta = date_2 - date_1
-    return timedelta.days
+    return abs(timedelta.days)
 
 if __name__ == "__main__":
     import doctest
