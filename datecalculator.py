@@ -76,6 +76,7 @@ def parse_date_string(input_string):
 
     day, month, year = input_string.split(" de ")
     day = int(day)
+    month = month.title()
     year = int(year)
     month_number, month_days = months[month]
 
