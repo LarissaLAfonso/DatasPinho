@@ -33,8 +33,10 @@ elif user_input == "C":
     calculatediff(dates)
 elif user_input == "F":
     file_name = input("Input file path.")
-    with open(file_name, "r") as file:
-        dates = file.read()
-        calculatediff(dates)
-    
+    try:
+        with open(file_name, "r") as file:
+            dates = file.read()
+            calculatediff(dates)
+    except FileNotFoundError:
+        print("The file you inputed does not exist.")
 
