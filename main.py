@@ -15,10 +15,14 @@ def calculatediff(dates):
     None.
 
     """
-    date_1, date_2 = dates.split(" - ")
-    date_1 = datecalculator.parse_date_string(date_1)
-    date_2 = datecalculator.parse_date_string(date_2)
-    print(datecalculator.calculate_days_between_dates(date_1, date_2))
+    try:
+        date_1, date_2 = dates.split(" - ")
+        date_1 = datecalculator.parse_date_string(date_1)
+        date_2 = datecalculator.parse_date_string(date_2)
+        print(datecalculator.calculate_days_between_dates(date_1, date_2))
+    except Exception as error:
+        print(error)
+        
 
 user_input = userchoice.type_of_input()
 
