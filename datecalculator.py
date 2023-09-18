@@ -21,7 +21,7 @@ def verify_leap_year(year):
     False
 
     >>> verify_leap_year(2000)
-    False
+    True
 
     """
     if year % 400 == 0:
@@ -104,9 +104,14 @@ def calculate_days_between_dates(date_1, date_2):
     int
         The number of days between the two dates.
 
-    >>> datecalculator.calculate_days_between_dates(datetime.datetime(2010, 1, 19), datetime.datetime(2022, 9, 18))
+    >>> import datetime
+    >>> calculate_days_between_dates(datetime.datetime(2010, 1, 19), datetime.datetime(2022, 9, 18))
     4625
 
     """
     timedelta = date_2 - date_1
     return timedelta.days
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
