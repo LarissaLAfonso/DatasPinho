@@ -104,6 +104,8 @@ def calculate_days_between_dates(dates):
     -------
     None.
 
+    >>> calculate_days_between_dates("25 de Janeiro de 69 - 25 de Fevereiro de 49")
+    7274
     """
     try:
         date_1, date_2 = dates.split(" - ")
