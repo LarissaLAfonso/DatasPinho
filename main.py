@@ -22,21 +22,19 @@ def calculatediff(dates):
         print(datecalculator.calculate_days_between_dates(date_1, date_2))
     except Exception as error:
         print(f"There was an error while converting your dates:\n {error}")
-        
 
-user_input = userchoice.type_of_input()
-
-if user_input == "Q":
-    print("You quit.")
-elif user_input == "C":
-    dates = input("Input dates.")
-    calculatediff(dates)
-elif user_input == "F":
-    file_name = input("Input file path.")
-    try:
+while True:
+    user_input = userchoice.type_of_input()
+    
+    if user_input == "Q":
+        print("You quit.")
+        break
+    elif user_input == "C":
+        dates = input("Input dates.")
+        calculatediff(dates)
+    elif user_input == "F":
+        file_name = input("Input file path.")
         with open(file_name, "r") as file:
             dates = file.read()
             calculatediff(dates)
-    except FileNotFoundError:
-        print("The file you inputed does not exist.")
-
+    
