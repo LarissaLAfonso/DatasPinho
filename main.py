@@ -12,7 +12,9 @@ while True:
         datecalculator.calculate_days_between_dates(dates)
     elif user_input == "F":
         file_name = input("Input file path.")
-        with open(file_name, "r") as file:
-            dates = file.read()
-            datecalculator.calculate_days_between_dates(dates)
-    
+        try:
+            with open(file_name, "r") as file:
+                dates = file.read()
+                datecalculator.calculate_days_between_dates(dates)
+        except FileNotFoundError:
+            print("The file {file_name} does not exist")
