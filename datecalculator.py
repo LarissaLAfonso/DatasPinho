@@ -91,29 +91,28 @@ def parse_date_string(input_string):
 
     return dt.datetime(year, month_number, day)
 
-def calculate_days_between_dates(date_1, date_2):
+def calculate_days_between_dates(dates):
     """
-    Calculate the difference in days between two dates.
+    Calculates the amount of days between two dates.
 
     Parameters
     ----------
-    date_1 : datetime.datetime
-        First date
-    date_2 : datetime.datetime
-        Second date
+    dates : string
+        Inputed dates.
 
     Returns
     -------
-    int
-        The number of days between the two dates.
-
-    >>> import datetime
-    >>> calculate_days_between_dates(datetime.datetime(2010, 1, 19), datetime.datetime(2022, 9, 18))
-    4625
+    None.
 
     """
-    timedelta = date_2 - date_1
-    return abs(timedelta.days)
+    try:
+        date_1, date_2 = dates.split(" - ")
+        date_1 = parse_date_string(date_1)
+        date_2 = parse_date_string(date_2)
+        timedelta = date_2 - date_1
+        print(abs(timedelta.days))
+    except Exception as error:
+        print(f"There was an error while converting your dates:\n {error}")
 
 if __name__ == "__main__":
     import doctest
