@@ -21,7 +21,7 @@ def calculatediff(dates):
         date_2 = datecalculator.parse_date_string(date_2)
         print(datecalculator.calculate_days_between_dates(date_1, date_2))
     except Exception as error:
-        print(error)
+        print(f"There was an error while converting your dates:\n {error}")
         
 
 user_input = userchoice.type_of_input()

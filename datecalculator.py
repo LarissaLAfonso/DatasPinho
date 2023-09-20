@@ -78,7 +78,10 @@ def parse_date_string(input_string):
     day = int(day)
     month = month.title()
     year = int(year)
-    month_number, month_days = months[month]
+    try:
+        month_number, month_days = months[month]
+    except KeyError:
+        raise ValueError(f"{month} isn't a valid month.")
 
     if (month == "Fevereiro") and verify_leap_year(year):
         month_days = 29
